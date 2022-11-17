@@ -1,0 +1,25 @@
+header
+    .logobox 
+        a(href="/").header__logo
+            //- i.fab.fa-youtube
+            img(src="/images/logo.svg")
+        h1=pageTitle
+    nav
+        ul
+            if loggedIn 
+                li
+                    a(href="/users/edit") Edit Profile
+                li 
+                    a(href="/users/logout") Log out
+                li 
+                    a(href=`/users/${loggedInUser._id}`) My Profile
+            else
+                li 
+                    a(href="/join") Join
+                li 
+                    a(href="/login") Login
+            li
+                a(href="/search") Search
+            if loggedIn 
+                li
+                    a(href="/videos/upload") Upload Video

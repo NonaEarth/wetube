@@ -1,0 +1,106 @@
+.upload {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+
+    .upload__left {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 25%;
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            input[type="file"]::-webkit-file-upload-button {
+                all:unset;
+                padding: 6px 10px;
+                text-align: center;
+                background-color: cornflowerblue;
+                color: white;
+                font-size: 13px;
+                font-weight: 450;
+                cursor: pointer;
+                border-radius: 9px;
+                transition: opacity linear .1s;
+                height: 15px;
+                margin-right: 7px;
+            }
+        
+            input {
+                all:unset;
+                padding: 6px 0px;
+                text-align: center;
+                border-radius: 9px;
+                font-size: 13px;
+                font-weight: 450;
+                color: white;
+                background-color: rgba(20, 20, 20, 0.85);
+            }
+        
+            input[type="file"] {
+                all:unset;
+                padding: 6px 0px;
+                text-align: center;
+                border-radius: 9px;
+                font-size: 13px;
+                font-weight: 450;
+                text-align: start;
+                background-color: none;
+                margin-bottom: 7px;
+            }
+    
+            input[type="text"] {
+                all:unset;
+                text-align: center;
+                border-radius: 9px;
+                font-size: 13px;
+                font-weight: 450;
+                text-align: start;
+                background-color: none;
+            }
+            
+            input[type="submit"] {
+                all:unset;
+                padding: 6px 10px;
+                text-align: center;
+                background-color: cornflowerblue;
+                color: white;
+                font-size: 13px;
+                font-weight: 450;
+                cursor: pointer;
+                border-radius: 9px;
+                transition: opacity linear .1s;
+                height: 15px;
+                margin-top: 7px;
+            }
+
+            input[name="title"] {
+                font-weight: 600;
+                font-size: 25px;
+            }
+
+            input[name="hashtags"] {
+                color: rgb(126, 128, 138);
+                display: flex;
+                font-weight: 400;
+                font-size: 11px;
+            }
+
+            
+            input[name="description"] {
+
+                font-weight: 300;
+                font-size: 17px;
+                margin-bottom: 10px;
+            }
+
+        }
+    }
+}

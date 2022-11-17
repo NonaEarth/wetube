@@ -1,0 +1,40 @@
+.one-video {
+    margin-bottom: 17px;
+    background-color: #282c34;
+    border-radius: 25px;
+    padding: 20px;
+
+    h4 {
+        font-weight: 600;
+        font-size: 25px;
+        margin-bottom: 2px;
+    }
+
+    p {
+        font-weight: 300;
+        font-size: 17px;
+        margin-bottom: 10px;
+    }
+
+    ul {
+        color: rgb(152, 154, 166);
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 4px;
+
+        li {
+            font-weight: 400;
+            font-size: 13.5px;
+        }
+
+        margin-bottom: 3px;
+    }
+    
+    small {
+        color: rgb(126, 128, 138);
+        display: flex;
+        font-weight: 400;
+        font-size: 11px;
+    }
+}

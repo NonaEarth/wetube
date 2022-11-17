@@ -1,0 +1,92 @@
+.profile-page-division {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+
+    .profile-division {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 25%;
+
+        .profile-pic {
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+        
+            input {
+                margin: 3px 3px 3px 0px;
+            }
+            input[type="file"] {
+                background-color: none;
+            }
+            
+            input[type="file"]::-webkit-file-upload-button {
+                margin-right: 7px;
+            }
+        
+            label {
+                font-weight: 400;
+                font-size: 13.5px;
+                color: rgb(152, 154, 166);
+                margin-bottom: 5px;
+            }
+
+            input[name="avatar"] {
+                margin-bottom: 20px;
+            }
+        
+            input[name="name"] {
+                font-size: 30px;
+                font-weight: 600;
+                margin-bottom: 10px;
+                color: white;
+                background: none;
+            }
+
+            input[name="avatar"] {
+                margin-bottom: 10px;
+                color: white;
+                background: none;
+            }
+        }
+    }    
+
+
+    .advertisement {
+        width: 75%;
+        height: 450px;
+        background-color: #181b20;
+        border-radius: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .advertisement__align {
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        h1 {
+            font-weight: 600;
+            font-size: 21px;
+            margin-bottom: 3px;
+        }
+
+        span {
+            font-weight: 400;
+            font-size: 13px;
+            color: rgb(181, 184, 197);
+        }
+    }
+}

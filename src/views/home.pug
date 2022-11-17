@@ -1,0 +1,14 @@
+extends base.pug
+include mixins/video.pug
+
+block content
+    .mainbox
+        .video-list
+            each item in videos 
+                +video(item)
+            else
+                li No videos are found.
+        .advertisement
+            .advertisement__align 
+                h1 Show your amazing moments!
+                span Your moments needs to be appreciated.

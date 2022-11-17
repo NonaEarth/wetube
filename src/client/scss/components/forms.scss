@@ -1,0 +1,30 @@
+form {
+    input {
+        all:unset;
+        padding: 6px 6px;
+        border-radius: 9px;
+        text-align: start;
+        font-size: 13px;
+        font-weight: 450;
+        color: rgb(152, 154, 166);
+        background-color: white;
+    }
+    
+    input[type="submit"],
+    input[type="file"]::-webkit-file-upload-button {
+        all:unset;
+        padding: 7px 10px;
+        border-radius: 9px;
+        color: white;
+        text-align: center;
+        font-size: 13px;
+        font-weight: 450;
+        height: 15px;
+        cursor: pointer;
+        background-color: cornflowerblue;
+    }
+
+    input[type="file"] {
+        padding: 0px;
+    }
+}

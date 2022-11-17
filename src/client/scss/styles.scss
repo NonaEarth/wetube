@@ -1,0 +1,39 @@
+//# Import Fonts
+//-> Pretendard
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
+
+//# Config
+@import "./config/_reset.scss";
+@import "./config/_variables.scss";
+
+//# Components
+@import "./components/footer.scss";
+@import "./components/footer.scss";
+@import "./components/forms.scss";
+@import "./components/header.scss";
+@import "./components/shared.scss";
+@import "./components/social-login.scss";
+@import "./components/video-player.scss";
+@import "./components/video.scss";
+
+//# Screens
+@import "./screens/home.scss";
+@import "./screens/edit-profile.scss";
+@import "./screens/search.scss";
+@import "./screens/upload.scss";
+
+//# Defaults
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Pretendard';
+    background-color: $bg;
+    color: $text;
+}
+
+main {
+    margin: 0px 30px;
+}

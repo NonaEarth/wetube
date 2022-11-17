@@ -1,0 +1,11 @@
+mixin video(info)
+    .one-video
+        h4
+            a(href=`/videos/${info.id}`)=info.title
+            info.title
+        p=info.description
+        ul
+            each hashtag in info.hashtags 
+                li=hashtag
+        small=info.createdAt
+    .video-thumbnail(style=`background-image:url(${info.thumbUrl});background-size:cover;background-position:center;`)

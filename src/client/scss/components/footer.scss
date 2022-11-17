@@ -1,0 +1,17 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 30px 30px;
+
+    footer {
+        margin-bottom: 3px;
+    }
+    small {
+        color: rgb(126, 128, 138);
+        display: flex;
+        font-weight: 400;
+        font-size: 11px;
+    }
+}

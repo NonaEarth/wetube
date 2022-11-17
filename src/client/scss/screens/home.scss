@@ -1,0 +1,40 @@
+.mainbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .video-list {
+        width: 48.5%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .advertisement {
+        width: 48.5%;
+        height: 300px;
+        background-color: #181b20;
+        border-radius: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .advertisement__align {
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        h1 {
+            font-weight: 600;
+            font-size: 21px;
+            margin-bottom: 3px;
+        }
+
+        span {
+            font-weight: 400;
+            font-size: 13px;
+            color: rgb(181, 184, 197);
+        }
+    }
+}
