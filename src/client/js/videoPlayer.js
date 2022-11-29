@@ -19,7 +19,7 @@ let controlsMovementTimeout = null;
 const formatTime = function (input) {
 
     // The time (in seconds) that should be re-formatted.
-    const seconds = 29;
+    const seconds = input;
 
     // Get an ISOString.
     //{} When we put the time in miliseconds(ms) as an argument,
