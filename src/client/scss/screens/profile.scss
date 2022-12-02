@@ -1,0 +1,53 @@
+.profile-info-page-division {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+
+    .profile-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 25%;
+
+        h1 {
+            font-size: 30px;
+            font-weight: 600;
+            margin-bottom: 2px;
+            color: white;
+            background: none;
+            padding: 3px 3px 3px 0px;
+            margin-top: 21.5px;
+        }
+    }    
+
+    .profile-videos {
+        width: 60%;
+        min-height: 300px;
+        height: auto;
+        background-color: #181b20;
+        border-radius: 35px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        .textBox {
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .one-video {
+            width: 85%;
+
+            &:first-child {
+                margin-top: 20px;
+            }
+        }
+    }
+}
