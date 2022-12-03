@@ -139,7 +139,7 @@ export const postLogin = async function (req, res) {
 
 export const logout = function (req, res) {
 	req.session.destroy();
-	req.flash("info", "You're logged out.");
+	// req.flash("info", "You're logged out.");
 	return res.redirect("/");
 };
 
