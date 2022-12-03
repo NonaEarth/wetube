@@ -145,7 +145,7 @@ export const logout = function (req, res) {
 
 export const see = async function (req, res) {
 	const { id } = req.params;
-	const user = await User.findById(id).populate("videos");
+	const user = await User.findById(id).populate("videos").sort({ createdAt: "desc" });
 
 	if (!user) {
 		return res.status(404).render("404", { pageTitle: "User not found." });

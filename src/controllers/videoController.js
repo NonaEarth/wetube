@@ -26,7 +26,7 @@ export const watch = async function (req, res) {
 	// Population is the process of replacing the specified path
 	// in the document of one collection with the actual document
 	// from the other collection.
-	const video = await Video.findById(id).populate("owner").sort({ createdAt: "desc" }).populate("comments");
+	const video = await Video.findById(id).sort({ createdAt: "desc" }).populate("owner").populate("comments");
 
 	if (!video) {
 		return res.render("404", { pageTitle: "Video Not Found" });
@@ -104,8 +104,8 @@ export const postUpload = async function (req, res) {
 				? video[0].location.replace(/[\\]/g, "/")
 				: video[0].path.replace(/[\\]/g, "/"),
 			thumbUrl: isHeroku
-				? thumb[0].location.replace(/[\\]/g, "/")
-				: thumb[0].path.replace(/[\\]/g, "/"),
+				? video[0].location.replace(/[\\]/g, "/")
+				: video[0].path.replace(/[\\]/g, "/"),
 			owner: _id,
 			hashtags: Video.formatHashtags(hashtags),
 		});

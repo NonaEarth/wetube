@@ -11,7 +11,7 @@ block content
                         img(src=loggedInUser.avatarUrl, width="100", height="100").profile-pic
             h1=loggedInUser.name
         .profile-videos
-            each video in user.videos
+            each video in user.videos.reverse()
                 +video(video)
             else 
                 .textBox
