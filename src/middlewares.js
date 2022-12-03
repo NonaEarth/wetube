@@ -21,6 +21,12 @@ const s3VideoUploader = multerS3({
     acl: 'public-read',
 });
 
+const s3ThumbUploader = multerS3({
+	s3: s3,
+	bucket: "wetubefiles/thumbnails",
+    acl: 'public-read',
+});
+
 const isHeroku = process.env.NODE_ENV === "production";
 
 export const localsMiddleware = function (req, res, next) {
@@ -68,6 +74,14 @@ export const videoUpload = multer({
 		fileSize: 10000000,
 	},
 	storage: isHeroku ? s3VideoUploader : undefined,
+});
+
+export const thumbUpload = multer({
+	dest: "uploads/thumbs/",
+	limits: {
+		fileSize: 10000000,
+	},
+	storage: isHeroku ? s3ThumbUploader : undefined,
 });
 
 // export const avatarUpload = multer({
