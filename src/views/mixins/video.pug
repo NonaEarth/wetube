@@ -1,6 +1,6 @@
 mixin video(info)
     .one-video
-        img(crossorigin="anonymous", src=info.thumbUrl)
+        img(src=info.thumbUrl, crossorigin)
         .one-info
             h4
                 a(href=`/videos/${info.id}`)=info.title
