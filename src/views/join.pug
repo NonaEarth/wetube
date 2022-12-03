@@ -2,7 +2,8 @@ extends base.pug
 
 block content 
     if errorMessage
-        span=errorMessage
+        span.errorMsg=errorMessage
+        div(style="margin-bottom : 10px;")
     .join-page
         form(method="POST")
             input(placeholder="Name" name="name", type="text", required)

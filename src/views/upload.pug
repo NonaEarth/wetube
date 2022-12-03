@@ -7,7 +7,8 @@ block content
             button#actionBtn Start Recording
         .upload
             if errorMessage 
-                span=errorMessage
+                span.errorMsg=errorMessage
+                div(style="margin-bottom : 10px;")
             .upload__left
                 form(method="POST", action="/videos/upload", enctype="multipart/form-data")
                     .onelabel

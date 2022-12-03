@@ -15,6 +15,7 @@
 @import "./components/social-login.scss";
 @import "./components/video-player.scss";
 @import "./components/video.scss";
+@import "./components/errorMsg.scss";
 
 //# Screens
 @import "./screens/home.scss";
@@ -25,6 +26,7 @@
 @import "./screens/login.scss";
 @import "./screens/join.scss";
 @import "./screens/edit.scss";
+@import "./screens/change-password.scss";
 
 //# Defaults
 a {
