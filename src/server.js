@@ -17,7 +17,7 @@ import apiRouter from "./routers/apiRouter.js";
 const logger = morgan("dev");
 const app = express();
 
-app.use('/*/', (req, res, next) => {
+app.use('/videos/upload', (req, res, next) => {
 	res.header("Cross-Origin-Embedder-Policy", "require-corp");
 	res.header("Cross-Origin-Opener-Policy", "same-origin");
 	next();
