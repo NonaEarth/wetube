@@ -5,12 +5,6 @@ import session from "express-session";
 import MongoStore from "connect-mongo";
 import flash from "express-flash";
 
-app.use((req, res, next) => {
-	res.header("Cross-Origin-Embedder-Policy", "require-corp");
-	res.header("Cross-Origin-Opener-Policy", "same-origin");
-	next();
-});
-
 import { localsMiddleware } from "./middlewares.js";
 
 // Node: Import routers.
@@ -22,6 +16,12 @@ import apiRouter from "./routers/apiRouter.js";
 // Create variables with modules.
 const logger = morgan("dev");
 const app = express();
+
+app.use('/*/', (req, res, next) => {
+	res.header("Cross-Origin-Embedder-Policy", "require-corp");
+	res.header("Cross-Origin-Opener-Policy", "same-origin");
+	next();
+});
 
 // Express Configuration
 app.set("view engine", "pug");
