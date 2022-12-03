@@ -24,9 +24,10 @@ app.set("views", process.cwd() + "/src/views");
 app.use((req, res, next) => {
 	res.header("Access-Control-Allow-Origin", "*");
 	res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
-	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-	res.header("Cross-Origin-Embedder-Policy", "require-corp");
-	res.header("Cross-Origin-Opener-Policy", "same-origin");
+	res.header(
+		"Access-Control-Allow-Headers",
+		"Origin,Accept,X-Requested-With,Content-Type,Access-Control-Request-Method,Access-Control-Request-Headers,Authorization"
+	);
 	next();
 });
 
