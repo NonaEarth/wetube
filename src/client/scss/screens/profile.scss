@@ -33,7 +33,7 @@
         min-height: 300px;
         height: auto;
         background-color: #181b20;
-        border-radius: 25px;
+        border-radius: 32px;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -49,11 +49,8 @@
 
         .one-video {
             width: 85%;
-            border-radius: 15px;
-
-            &:first-child {
-                margin-top: 20px;
-            }
+            border-radius: 25px;
+            margin: 20px 0px;
         }
     }
 }
