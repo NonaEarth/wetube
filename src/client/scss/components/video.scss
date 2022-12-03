@@ -1,5 +1,7 @@
 .one-video {
 	position: relative;
+	background-color: #282c34;
+	border-radius: 25px;
 
 	img {
 		position: absolute;
@@ -13,11 +15,10 @@
 	}
 
 	.one-info {
+		margin-bottom: 17px;
+		border-radius: 25px;
 		position: relative;
 		z-index: 5;
-		margin-bottom: 17px;
-		background-color: #282c34;
-		border-radius: 25px;
 		padding: 20px;
 
 		h4 {
