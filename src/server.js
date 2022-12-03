@@ -7,12 +7,6 @@ import flash from "express-flash";
 
 import { localsMiddleware } from "./middlewares.js";
 
-app.use((req, res, next) => {
-	res.header("Cross-Origin-Embedder-Policy", "require-corp");
-	res.header("Cross-Origin-Opener-Policy", "same-origin");
-	next();
-});
-
 // Node: Import routers.
 import rootRouter from "./routers/rootRouter.js";
 import videoRouter from "./routers/videoRouter.js";
@@ -62,6 +56,12 @@ app.use("/images", express.static("images"));
 //     res.header("Cross-Origin-Opener-Policy", "same-origin");
 //     next();
 // });
+
+app.use((req, res, next) => {
+	res.header("Cross-Origin-Embedder-Policy", "require-corp");
+	res.header("Cross-Origin-Opener-Policy", "same-origin");
+	next();
+});
 
 // Register Commands
 app.use("/", rootRouter);
