@@ -14,12 +14,18 @@ import userRouter from "./routers/userRouter.js";
 import apiRouter from "./routers/apiRouter.js";
 
 // Create variables with modules.
-const logger = morgan("dev");
 const app = express();
+const logger = morgan("dev");
 
 // Express Configuration
 app.set("view engine", "pug");
 app.set("views", process.cwd() + "/src/views");
+
+app.use((req, res, next) => {
+	res.header("Cross-Origin-Embedder-Policy", "require-corp");
+	res.header("Cross-Origin-Opener-Policy", "same-origin");
+	next();
+});
 
 // Applies to all.
 app.use(logger);
@@ -54,11 +60,6 @@ app.use("/images", express.static("images"));
 // Register Commands
 app.use("/", rootRouter);
 app.use("/users", userRouter);
-app.use((req, res, next) => {
-	res.header("Cross-Origin-Embedder-Policy", "require-corp");
-	res.header("Cross-Origin-Opener-Policy", "same-origin");
-	next();
-});
 app.use("/videos", videoRouter);
 app.use("/api", apiRouter);
 
