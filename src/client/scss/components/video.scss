@@ -13,14 +13,14 @@
 	}
 
 	.one-info {
+		position: relative;
+		z-index: 5;
 		margin-bottom: 17px;
 		background-color: #282c34;
 		border-radius: 25px;
 		padding: 20px;
 
 		h4 {
-			position: relative;
-			z-index: 5;
 			font-weight: 600;
 			font-size: 25px;
 			margin-bottom: 2px;
