@@ -17,15 +17,15 @@ import apiRouter from "./routers/apiRouter.js";
 const logger = morgan("dev");
 const app = express();
 
+// Express Configuration
+app.set("view engine", "pug");
+app.set("views", process.cwd() + "/src/views");
+
 app.use((req, res, next) => {
 	res.header("Cross-Origin-Embedder-Policy", "require-corp");
 	res.header("Cross-Origin-Opener-Policy", "same-origin");
 	next();
 });
-
-// Express Configuration
-app.set("view engine", "pug");
-app.set("views", process.cwd() + "/src/views");
 
 // Applies to all.
 app.use(logger);
