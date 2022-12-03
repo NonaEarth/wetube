@@ -26,7 +26,7 @@ export const watch = async function (req, res) {
 	// Population is the process of replacing the specified path
 	// in the document of one collection with the actual document
 	// from the other collection.
-	const video = await Video.findById(id).populate("owner").populate("comments");
+	const video = await Video.findById(id).populate("owner").sort({ createdAt: "desc" }).populate("comments");
 
 	if (!video) {
 		return res.render("404", { pageTitle: "Video Not Found" });
