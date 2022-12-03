@@ -7,6 +7,12 @@ import flash from "express-flash";
 
 import { localsMiddleware } from "./middlewares.js";
 
+app.use((req, res, next) => {
+	res.header("Cross-Origin-Embedder-Policy", "require-corp");
+	res.header("Cross-Origin-Opener-Policy", "same-origin");
+	next();
+});
+
 // Node: Import routers.
 import rootRouter from "./routers/rootRouter.js";
 import videoRouter from "./routers/videoRouter.js";
@@ -16,12 +22,6 @@ import apiRouter from "./routers/apiRouter.js";
 // Create variables with modules.
 const logger = morgan("dev");
 const app = express();
-
-app.use((req, res, next) => {
-	res.header("Cross-Origin-Embedder-Policy", "require-corp");
-	res.header("Cross-Origin-Opener-Policy", "same-origin");
-	next();
-});
 
 // Express Configuration
 app.set("view engine", "pug");
