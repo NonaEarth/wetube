@@ -3,7 +3,7 @@ import express from "express";
 import morgan from "morgan";
 import session from "express-session";
 import MongoStore from "connect-mongo";
-import flash from "express-flash"
+import flash from "express-flash";
 
 import { localsMiddleware } from "./middlewares.js";
 
@@ -19,10 +19,16 @@ const app = express();
 
 // Express Configuration
 app.set("view engine", "pug");
-app.set("views", process.cwd() + "/src/views")
+app.set("views", process.cwd() + "/src/views");
 
 // Applies to all.
 app.use(logger);
+
+app.all("/*", function (req, res, next) {
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "X-Requested-With");
+	next();
+});
 
 //{} 컨트롤러에서 "req.body"를 사용할수 있도록 해줌.
 // Express 앱이 HTML form을 이해하고 그 form을
@@ -32,14 +38,16 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.json());
 
-app.use(session({
-    secret: process.env.COOKIE_SECRET,
-    resave: false,
-    saveUninitialized: false,
-    store: MongoStore.create({
-        mongoUrl: process.env.DB_URL,
-    }),
-}));
+app.use(
+	session({
+		secret: process.env.COOKIE_SECRET,
+		resave: false,
+		saveUninitialized: false,
+		store: MongoStore.create({
+			mongoUrl: process.env.DB_URL,
+		}),
+	})
+);
 
 app.use(flash());
 app.use(localsMiddleware);
