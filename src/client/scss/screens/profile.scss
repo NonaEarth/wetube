@@ -29,15 +29,14 @@
     }    
 
     .profile-videos {
-        width: 60%;
+        width: auto;
         min-height: 300px;
         height: auto;
-        background-color: #181b20;
         border-radius: 32px;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        align-items: center;
+        align-items: flex-end;
 
         .textBox {
             height: 300px;
