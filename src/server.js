@@ -22,8 +22,10 @@ app.set("view engine", "pug");
 app.set("views", process.cwd() + "/src/views");
 
 app.use((req, res, next) => {
-	res.header("Cross-Origin-Embedder-Policy", "*");
-	res.header("Cross-Origin-Opener-Policy", "X-Requested-With");
+	res.header("Cross-Origin-Embedder-Policy", "require-corp");
+	res.header("Cross-Origin-Opener-Policy", "same-origin");
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
 	next();
 });
 
