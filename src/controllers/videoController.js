@@ -102,10 +102,10 @@ export const postUpload = async function (req, res) {
 			description: description,
 			fileUrl: isHeroku
 				? video[0].location.replace(/[\\]/g, "/")
-				: video[0].path,
+				: video[0].path.replace(/[\\]/g, "/"),
 			thumbUrl: isHeroku
 				? video[0].location.replace(/[\\]/g, "/")
-				: video[0].path,
+				: video[0].path.replace(/[\\]/g, "/"),
 			owner: _id,
 			hashtags: Video.formatHashtags(hashtags),
 		});
