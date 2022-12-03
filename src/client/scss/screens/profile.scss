@@ -37,19 +37,5 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-end;
-
-        .textBox {
-            height: 300px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .one-video {
-            width: 85%;
-            border-radius: 25px;
-            margin: 20px 0px;
-        }
     }
 }
