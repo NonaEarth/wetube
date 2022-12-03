@@ -17,6 +17,12 @@ import apiRouter from "./routers/apiRouter.js";
 const logger = morgan("dev");
 const app = express();
 
+app.use((req, res, next) => {
+	res.header("Cross-Origin-Embedder-Policy", "require-corp");
+	res.header("Cross-Origin-Opener-Policy", "same-origin");
+	next();
+});
+
 // Express Configuration
 app.set("view engine", "pug");
 app.set("views", process.cwd() + "/src/views");
@@ -42,7 +48,6 @@ app.use(
 		}),
 	})
 );
-
 app.use(flash());
 app.use(localsMiddleware);
 
@@ -50,18 +55,6 @@ app.use(localsMiddleware);
 app.use("/uploads", express.static("uploads"));
 app.use("/static", express.static("assets"));
 app.use("/images", express.static("images"));
-
-// app.use((req, res, next) => {
-//     res.header("Cross-Origin-Embedder-Policy", "require-corp");
-//     res.header("Cross-Origin-Opener-Policy", "same-origin");
-//     next();
-// });
-
-app.use((req, res, next) => {
-	res.header("Cross-Origin-Embedder-Policy", "require-corp");
-	res.header("Cross-Origin-Opener-Policy", "same-origin");
-	next();
-});
 
 // Register Commands
 app.use("/", rootRouter);
