@@ -1,0 +1,34 @@
+.join-page {
+    form {
+        width: 250px;
+        row-gap: 7px;
+        display: flex;
+        flex-direction: column;
+
+        input[type="submit"] {
+            margin-top: 7px;
+        }
+
+        a {
+            margin-top: 3px;
+        }
+    }
+
+    .already-have-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        span {
+            font-weight: 400;
+            font-size: 11.5px;
+            color: rgb(152, 154, 166);
+            margin-top: 20px;
+        }
+
+        a {
+            margin-top: 5px;
+        }
+    }
+}

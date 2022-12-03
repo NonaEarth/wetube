@@ -1,21 +1,24 @@
 extends base.pug
 
 block content 
-    div
-        video#preview
-        button#actionBtn Start Recording
-    .upload
-        if errorMessage 
-            span=errorMessage
-        .upload__left
-            form(method="POST", action="/videos/upload", enctype="multipart/form-data")
-                label(for="video" Video File)
-                input(type="file", accept="video/*", required, id="video", name="video")
-                label(for="thumb" Thumbnail File)
-                input(type="file", accept="image/*", required, id="thumb", name="thumb")
-                input(name="title", placeholder="Title" required, type="text", maxlength=20)
-                input(name="description", placeholder="Description", required, type="text" minlength=5)
-                input(name="hashtags", placeholder="Hashtags, separated by comma." required, type="text")
-                input(type="submit", value="Upload Video")
+    .upload-screen 
+        .record-preview
+            video#preview
+            button#actionBtn Start Recording
+        .upload
+            if errorMessage 
+                span=errorMessage
+            .upload__left
+                form(method="POST", action="/videos/upload", enctype="multipart/form-data")
+                    .onelabel
+                        label(for="video") Video
+                        input(type="file", accept="video/*", required, id="video", name="video")
+                    .onelabel
+                        label(for="thumb") Thumbnail
+                        input(type="file", accept="image/*", required, id="thumb", name="thumb")
+                    input(name="title", placeholder="Title" required, type="text", maxlength=20)
+                    input(name="description", placeholder="Description", required, type="text" minlength=5)
+                    input(name="hashtags", placeholder="Hashtags, separated by comma." required, type="text")
+                    input(type="submit", value="Upload Video")
 block scripts 
     script(src="/static/js/recorder.js")
