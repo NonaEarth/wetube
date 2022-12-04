@@ -46,7 +46,7 @@ block content
                         li.video__comment
                             span #{comment.text}
                             if String(comment.owner._id) === String(loggedInUser._id)
-                                button#delBtn(data-userId=comment.owner._id, data-commentId=comment._id) X
+                            button.delBtn(data-userId=comment.owner._id, data-commentId=comment._id) X
 
 
 

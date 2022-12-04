@@ -207,11 +207,11 @@ export const deleteComment = async function (req, res) {
 			user: { _id },
 		},
 	} = req;
-	const { commentUserId } = req.params;
+	const { commentId, commentUserId } = req.params;
 
 	if (_id === commentUserId) {
-		const deletingComment = await Comment.findById(댓글아이디);
+		Comment.findByIdAndDelete(commentId);
 	}
 
-	return res.status(201);
+	return res.status(201).json({});
 };
