@@ -28,6 +28,10 @@
 		transition: opacity 0.5s ease-in-out;
 		backdrop-filter: blur(20px);
 
+		@media all and (display-mode: fullscreen) {
+			border-radius: 0px;
+		}
+
 		&.showing {
 			opacity: 1;
 		}
