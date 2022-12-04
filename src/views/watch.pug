@@ -1,7 +1,6 @@
 extends base.pug
 
 block content
-
     div#videoContainer(data-id=video._id)
         video(src=video.fileUrl)
         div#videoControls
@@ -43,14 +42,11 @@ block content
             div.video__comments
                 ul
                     each comment in video.comments.reverse()
-                        li.video__comment
+                        li.video__comment.text
                             span #{comment.text}
                             if String(comment.owner._id) === String(loggedInUser._id)
-                            button.delBtn(data-userId=comment.owner._id, data-commentId=comment._id) X
-
-
-
-
+                                button#delBtn
+                                    .dataBox(data-userId=comment.owner._id, data-commentId=comment._id) X                      
 block scripts 
     script(src="/static/js/videoPlayer.js")
     if loggedIn

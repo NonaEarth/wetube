@@ -210,7 +210,7 @@ export const deleteComment = async function (req, res) {
 	const { commentId, commentUserId } = req.params;
 
 	if (_id === commentUserId) {
-		Comment.findByIdAndDelete(commentId);
+		await Comment.findByIdAndDelete(commentId);
 	}
 
 	return res.status(201).json({});

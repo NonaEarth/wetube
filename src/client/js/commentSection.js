@@ -1,12 +1,12 @@
 const videoContainer = document.getElementById("videoContainer");
 const form = document.getElementById("commentForm");
-const delBtns = document.getElementsByClassName("delBtn");
+const delBtns = document.querySelectorAll("#delBtn");
 
+console.log(delBtns);
 const addComment = function (text, id, userId) {
     const videoComments = document.querySelector(".video__comments ul");
     const newComment = document.createElement("li");
-    // newComment.dataset.id = id;
-    newComment.owner._id = userId;
+    newComment.dataset.id = id;
     newComment.className = "video__comment";
     const span = document.createElement("span");
     span.innerText = `${text}`;
@@ -50,10 +50,15 @@ const handleSubmit = async function (event) {
     }
 }
 
+if (form) {
+    form.addEventListener("submit", handleSubmit);
+}
+
 const delComment = async (event) => {
-    console.log('gd');
-    const commentUserId = event.target.dataset.userId;
-    const commentId = event.target.dataset.commentId;
+    const dataBox = event.target.querySelector(dataBox);
+
+    const commentUserId = dataBox.dataset.userId;
+    const commentId = dataBox.dataset.commentId;
     
     const delfetch = await fetch(`/api/delcomment/${commentId}/${commentUserId}`, {
         method: "POST",
@@ -68,14 +73,8 @@ const delComment = async (event) => {
     }
 }
 
-if (form) {
-    form.addEventListener("submit", handleSubmit);
+if (delBtns) {
+    for (let index = 0; index < delBtns.length; index++) {
+        delBtns[index].addEventListener('click', delComment);
+    }
 }
-
-for (let index = 0; index < delBtns.length; index++) {
-    delBtns[index].addEventListener("onClick", delComment);
-}
-
-//[] TODO :
-//[] 댓글 삭제 기능
-//[] 댓글 작성자가 아니라면 삭제 버튼 안보이게 하기
