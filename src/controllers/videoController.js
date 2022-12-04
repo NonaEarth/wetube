@@ -200,3 +200,18 @@ export const createComment = async function (req, res) {
 
 	return res.status(201).json({ newCommentId: comment._id });
 };
+
+export const deleteComment = async function (req, res) {
+	const {
+		session: {
+			user: { _id },
+		},
+	} = req;
+	const { commentUserId } = req.params;
+
+	if (_id === commentUserId) {
+		const deletingComment = await Comment.findById(댓글아이디);
+	}
+
+	return res.status(201);
+};

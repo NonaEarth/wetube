@@ -2,8 +2,17 @@ import User from "../models/User.js";
 import Video from "../models/Video.js";
 import fetch from "node-fetch";
 import bcrypt from "bcrypt";
-
 import { request, response } from "express";
+
+export const getSessionInfo = (req, res) => {
+	const {
+		session: {
+			user: { _id },
+		},
+	} = req;
+
+	return res.status(201).json({ userId: _id });
+};
 
 export const getJoin = function (req, res) {
 	return res.render("join", { pageTitle: "Join" });
