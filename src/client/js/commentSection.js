@@ -58,7 +58,6 @@ const delComment = async (event) => {
 	const dataBox = event.target.querySelector(".dataBox");
 
 	const commentUserId = dataBox.dataset.user;
-    console.log(dataBox.dataset);
 	const commentId = dataBox.dataset.comment;
 
 	console.log(dataBox, commentId, commentUserId);
@@ -70,7 +69,7 @@ const delComment = async (event) => {
 			headers: {
 				"Content-Type": "application/json",
 			},
-			body: JSON.stringify({ text: text }),
+			body: JSON.stringify(),
 		}
 	);
 
