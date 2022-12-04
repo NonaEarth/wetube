@@ -2,7 +2,6 @@ const videoContainer = document.getElementById("videoContainer");
 const form = document.getElementById("commentForm");
 const delBtns = document.querySelectorAll("#delBtn");
 
-console.log(delBtns);
 const addComment = function (text, id, userId) {
     const videoComments = document.querySelector(".video__comments ul");
     const newComment = document.createElement("li");
@@ -72,9 +71,6 @@ const delComment = async (event) => {
         console.log("성공!");
     }
 }
-
-if (delBtns) {
-    for (let index = 0; index < delBtns.length; index++) {
-        delBtns[index].addEventListener('click', delComment);
-    }
+for (let index = 0; index < delBtns.length; index++) {
+    delBtns[index].addEventListener('click', delComment);
 }
