@@ -1,11 +1,13 @@
 const video = document.querySelector("video");
 const playBtn = document.getElementById("play");
+const playImg = document.getElementById("playImg");
 const muteBtn = document.getElementById("mute");
 const currentTime = document.getElementById("currentTime");
 const totalTime = document.getElementById("totalTime");
 const volumeRange = document.getElementById("volume");
 const timeline = document.getElementById("timeline");
 const fullScreenBtn = document.getElementById("fullScreen");
+const fullScreenImg = document.getElementById("fullScreenImg");
 const videoContainer = document.getElementById("videoContainer");
 const videoControls = document.getElementById("videoControls");
 
@@ -42,14 +44,14 @@ const handlePlayClick = function (event) {
 
     // If the video is playing, pause it.
     if (video.paused) {
-        playBtn.innerText = "Pause";
+        playImg.src = "/images/stop.svg"
         video.play();
     } else {
         video.pause();
     }
 
     // Update the text in the play/pause button.
-    playBtn.innerText = video.paused ? "Play" : "Pause";
+    playImg.src = video.paused ? "/images/play.svg" : "/images/stop.svg";
 };
 
 // Toggle mute and controls the text in the button.
@@ -106,10 +108,10 @@ const handleFullScreen = function () {
 
     if (fullScreen) {
         document.exitFullscreen();
-        fullScreenBtn.innerText = "Enter Full Screen";
+        fullScreenImg.src = "/images/fullscreen.svg";
     } else {
         videoContainer.requestFullscreen();
-        fullScreenBtn.innerText = "Exit Full Screen";
+        fullScreenImg.src = "/images/normalscreen.svg";
     }
 }
 
