@@ -4,7 +4,7 @@ import { registerView, createComment, deleteComment } from "../controllers/video
 
 const apiRouter = express.Router();
 
-apiRouter.post("/videos/delcomment/:commentId/:commentUserId", deleteComment);
+apiRouter.delete("/videos/delcomment/:commentId/:commentUserId", deleteComment);
 apiRouter.post("/videos/:id([0-9a-f]{24})/view", registerView);
 apiRouter.post("/videos/:id([0-9a-f]{24})/comment", createComment);
 apiRouter.post("/sessionInfo", getSessionInfo);
