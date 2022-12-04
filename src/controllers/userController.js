@@ -138,14 +138,14 @@ export const postLogin = async function (req, res) {
 };
 
 export const logout = function (req, res) {
-	req.session.loggedIn = false; 
-	req.flash("info", "You're logged out.");
+	req.session.destroy();
+	// req.flash("info", "You're logged out.");
 	return res.redirect("/");
 };
 
 export const see = async function (req, res) {
 	const { id } = req.params;
-	const user = await User.findById(id).populate("videos").sort({ createdAt: "desc" });
+	const user = await User.findById(id).populate("videos");
 
 	if (!user) {
 		return res.status(404).render("404", { pageTitle: "User not found." });
@@ -245,8 +245,6 @@ export const finishGithubLogin = async function (req, res) {
 		// Check if there is already an account with the email.
 		let user = await User.findOne({ email: emailObj.email });
 
-		console.log(userData);
-		console.log("오", user);
 		//{} When there is no email-matching account in the DB,
 		//{} create an account with the email.
 		if (user === null) {
@@ -319,9 +317,6 @@ export const postChangePassword = async function async(req, res) {
 	await user.save();
 
 	req.flash("info", "Password updated.");
-
-	//[] TODO :
-	//[] 비밀번호 변경하기.
 
 	//[] Send Notification
 	return res.redirect("/users/logout");

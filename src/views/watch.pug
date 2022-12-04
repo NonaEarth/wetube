@@ -19,29 +19,32 @@ block content
                 button#fullScreen
                     img#fullScreenImg(src="/images/fullscreen.svg")
 
-    div
-        p=video.description
-        small=video.createdAt
-    
-    div
-        small Uploaded by 
-            a(href=`/users/${video.owner._id}`)=video.owner.name
+    .watch-page-box 
+        .description-box
+            .basic-info
+                p=video.description
+                small=video.createdAt
+            
+            .uploader
+                small Uploaded by 
+                    a(href=`/users/${video.owner._id}`)=video.owner.name
 
-    if String(video.owner._id) === String(loggedInUser._id)
-        a(href=`${video.id}/edit`) Edit Video &rarr;
-        br
-        a(href=`${video.id}/delete`) Delete Vi deo &rarr;
+            .userBtns
+                if String(video.owner._id) === String(loggedInUser._id)
+                    a(href=`${video.id}/edit`) Edit Video &rarr;
+                    a(href=`${video.id}/delete`) Delete Video &rarr;
 
-    if loggedIn
-        div.video__add-comments
-            form.video__comment-form#commentForm
-                textarea(cols="30", rows="10", placeholder="Write a nice comment.")
-                button Add Comment
-        div.video__comments
-            ul
-                each comment in video.comments.reverse()
-                    li.video__comment.text
-                        span #{comment.text}
+        .comment-box 
+            if loggedIn
+                div.video__add-comments
+                    form.video__comment-form#commentForm
+                        textarea(cols="30", rows="10", placeholder="Write a nice comment.")
+                    button Add Comment
+            div.video__comments
+                ul
+                    each comment in video.comments.reverse()
+                        li.video__comment.text
+                            span #{comment.text}
 
 block scripts 
     script(src="/static/js/videoPlayer.js")
