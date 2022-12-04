@@ -151,14 +151,14 @@ timeline.addEventListener("input", handleTimelineChange);
 fullScreenBtn.addEventListener("click", handleFullScreen);
 videoContainer.addEventListener("mousemove", handleMouseMove);
 videoContainer.addEventListener("mouseleave", handleMouseLeave);
-// document.addEventListener("keydown", (event) => {
-// 	console.log(event.code);
-// 	if (event.code === "Space") {
-// 		handlePlayAndStop();
-// 	} else if (event.code === "KeyF" || event.code === "Escape") {
-// 		handleFullScreen();
-// 	}
-// });
+document.addEventListener("keydown", (event) => {
+	console.log(event.code);
+	if (event.code === "Space") {
+		handlePlayAndStop();
+	} else if (event.code === "KeyF" || event.code === "Escape") {
+		handleFullScreen();
+	}
+});
 
 video.readyState
 	? handleLoadedMetadata()

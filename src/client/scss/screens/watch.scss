@@ -114,7 +114,11 @@
 
         #commentForm {
             width: 100%;
+            background-color: white;
+            border-radius: 25px;
             textarea {
+                padding: 10px;
+                all: unset;
                 width: 100%;
             }
         }
