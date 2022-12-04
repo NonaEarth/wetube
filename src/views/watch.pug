@@ -46,7 +46,7 @@ block content
                             span #{comment.text}
                             if String(comment.owner._id) === String(loggedInUser._id)
                                 button#delBtn
-                                    .dataBox(data-userId=comment.owner._id, data-commentId=comment._id) X
+                                    .dataBox(data-user=comment.owner._id, data-comment=comment._id) X
 block scripts 
     script(src="/static/js/videoPlayer.js")
     if loggedIn
