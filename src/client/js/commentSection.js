@@ -1,7 +1,7 @@
 const videoContainer = document.getElementById("videoContainer");
 const form = document.getElementById("commentForm");
 
-const addComment = function (text, id, userId) {
+const addComment = function (text, id) {
     const videoComments = document.querySelector(".video__comments ul");
     const newComment = document.createElement("li");
     newComment.dataset.id = id;
@@ -53,7 +53,7 @@ if (form) {
 }
 
 const delComment = async (event) => {
-    const dataBox = event.target.querySelector(dataBox);
+    console.log("ㅎㅇ");
 
     const commentUserId = dataBox.dataset.userId;
     const commentId = dataBox.dataset.commentId;
