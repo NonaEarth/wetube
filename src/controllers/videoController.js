@@ -213,5 +213,5 @@ export const deleteComment = async function (req, res) {
 		await Comment.findByIdAndDelete(commentId);
 	}
 
-	return res.status(201).json({});
+	return res.status(201);
 };

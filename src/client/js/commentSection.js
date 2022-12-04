@@ -60,16 +60,10 @@ const delComment = async (event) => {
 	const commentUserId = dataBox.dataset.user;
 	const commentId = dataBox.dataset.comment;
 
-	console.log(dataBox, commentId, commentUserId);
-
 	const delfetch = await fetch(
 		`/api/delcomment/${commentId}/${commentUserId}`,
 		{
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(),
+			method: "DELETE",
 		}
 	);
 
