@@ -1,6 +1,5 @@
 const videoContainer = document.getElementById("videoContainer");
 const form = document.getElementById("commentForm");
-const delBtns = document.querySelectorAll("#delBtn");
 
 const addComment = function (text, id, userId) {
     const videoComments = document.querySelector(".video__comments ul");
@@ -58,6 +57,8 @@ const delComment = async (event) => {
 
     const commentUserId = dataBox.dataset.userId;
     const commentId = dataBox.dataset.commentId;
+
+    console.log(dataBox, commentId, commentUserId);
     
     const delfetch = await fetch(`/api/delcomment/${commentId}/${commentUserId}`, {
         method: "POST",
@@ -68,9 +69,10 @@ const delComment = async (event) => {
     });
 
     if (delfetch.status === 201) {
-        console.log("성공!");
     }
 }
+const delBtns = document.querySelectorAll("#delBtn");
+
 for (let index = 0; index < delBtns.length; index++) {
     delBtns[index].addEventListener('click', delComment);
 }
