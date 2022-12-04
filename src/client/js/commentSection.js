@@ -55,7 +55,7 @@ if (form) {
 }
 
 const delComment = async (event) => {
-	const dataBox = event.target.querySelector(dataBox);
+	const dataBox = event.target.querySelector(.dataBox);
 
 	const commentUserId = dataBox.dataset.userId;
 	const commentId = dataBox.dataset.commentId;
