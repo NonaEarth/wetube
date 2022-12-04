@@ -65,7 +65,7 @@ const handleMuteClick = function (event) {
     }
 
     // Update the text in the mute toggle button.
-    muteBtn.innerText = video.muted ? "Unmute" : "Mute";
+    muteBtn.innerText = video.muted ? "UNMUTE" : "MUTE";
 
     volumeRange.value = video.muted ? 0 : volumeValue;
 };
@@ -80,7 +80,7 @@ const handleVolumeChange = function (event) {
 
     if (video.muted) {
         video.muted = false;
-        muteBtn.innerText = "Mute";
+        muteBtn.innerText = "MUTE";
     }
 };
 
@@ -98,8 +98,9 @@ const handleTimeUpdate = function () {
 
 const handleTimelineChange = function (event) {
 
-    const { target: { value } } = event;
-    video.currentTime = value;
+    // const { target: { value } } = event;
+    // video.currentTime = value;
+    video.currentTime = event.target.value;
 }
 
 const handleFullScreen = function () {
