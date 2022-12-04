@@ -55,13 +55,13 @@ if (form) {
 }
 
 const delComment = async (event) => {
-	const dataBox = event.target.querySelector(".dataBox");
+	const dataBox = await event.target.querySelector(".dataBox");
 
-	const commentUserId = dataBox.dataset.user;
-	const commentId = dataBox.dataset.comment;
+	const commentUserId = await dataBox.dataset.user;
+	const commentId = await dataBox.dataset.comment;
 
 	const delfetch = await fetch(
-		`/api/delcomment/${commentId}/${commentUserId}`,
+		`/api/videos/delcomment/${commentId}/${commentUserId}`,
 		{
 			method: "DELETE",
 		}
