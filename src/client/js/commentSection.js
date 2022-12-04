@@ -58,6 +58,7 @@ const delComment = async (event) => {
 	const dataBox = event.target.querySelector(".dataBox");
 
 	const commentUserId = dataBox.dataset.userId;
+    console.log(dataBox.dataset);
 	const commentId = dataBox.dataset.commentId;
 
 	console.log(dataBox, commentId, commentUserId);
