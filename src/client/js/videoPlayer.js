@@ -88,8 +88,8 @@ const handleLoadedMetadata = function () {
 };
 
 const handleTimeUpdate = function () {
-    currentTime.innerText = formatTime(Math.floor(video.currentTime));
-    timeline.value = Math.floor(video.currentTime);
+	currentTime.innerText = formatTime(Math.floor(video.currentTime));
+	timeline.value = Math.floor(video.currentTime);
 };
 
 const handleTimelineChange = function (event) {
@@ -151,3 +151,11 @@ timeline.addEventListener("input", handleTimelineChange);
 fullScreenBtn.addEventListener("click", handleFullScreen);
 videoContainer.addEventListener("mousemove", handleMouseMove);
 videoContainer.addEventListener("mouseleave", handleMouseLeave);
+document.addEventListener("keydown", (event) => {
+	console.log(event.code);
+	if (event.code === "Space") {
+		handlePlayAndStop();
+	} else if (event.code === "KeyF" || event.code === "Escape") {
+		handleFullScreen();
+	}
+});
