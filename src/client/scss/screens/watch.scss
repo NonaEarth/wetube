@@ -157,6 +157,20 @@
 					display: flex;
 					flex-direction: row;
 					justify-content: space-between;
+
+					button {
+						color: white;
+						all: unset;
+						padding: 7px 9px;
+						border-radius: 9px;
+						color: white;
+						text-align: center;
+						font-size: 13px;
+						font-weight: 450;
+						height: 15px;
+						cursor: pointer;
+						background-color: cornflowerblue;
+					}
 				}
 			}
 		}

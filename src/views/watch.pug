@@ -45,8 +45,8 @@ block content
                         li.video__comment.text
                             span #{comment.text}
                             if String(comment.owner._id) === String(loggedInUser._id)
-                                button#delBtn
-                                    .dataBox(data-user=comment.owner._id, data-comment=comment._id) X
+                                button#delBtn X
+                                    .dataBox(data-user=comment.owner._id, data-comment=comment._id)
 block scripts 
     script(src="/static/js/videoPlayer.js")
     if loggedIn
